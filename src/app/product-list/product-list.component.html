@@ -4,6 +4,7 @@
 
   <h3>
     <a [title]="product.name + ' details'">
+    [routerLink]="['/products', product.id]">
       {{ product.name }}
     </a>
   </h3>
@@ -13,7 +14,12 @@
   </p>
 
   <button type="button" (click)="share()">
-    Share
-  </button>
+  Share
+</button>
+
+<app-product-alerts
+  [product]="product" 
+  (notify)="onNotify()">
+</app-product-alerts>
 
 </div>
